@@ -7,8 +7,8 @@ void print_message(char* text){
 
 int calcule (int a, int b, char op) {
 	while (op != '+' && op != '-' && op != '*' && op != '/'){
-		printf("Entrer un opérateur valide:");
-		scanf("%c",&op);
+		printf("Entrer un opérateur valide:\n");
+		scanf(" %c",&op);
 	}
 	switch (op) {
 		case '+':

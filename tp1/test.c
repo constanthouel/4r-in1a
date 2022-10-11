@@ -2,37 +2,35 @@
 #include "./tp1.h"
 
 int main(int argc, char **argv){
-	int i;
-	char text[30];
-	int err,a,b;
+	int erra=0,errb=0,errop=0,a,b;
 	char op;
-	if (argc == 1){
-		scanf("%s",text);
-		print_message(text);
+	if (argc < 3){
+	while (erra != 1){
+		printf("Saisir un chiffre\n");
+		erra = scanf("%d",&a);
 	}
-	else if (argc == 2){
-		print_message(argv[1]);
+	while (errb != 1){
+		printf("Saisir un chiffre\n");
+		errb = scanf("%d",&b);
 	}
-	else if (argc > 2){
-		for ( i=1; i < argc; i++){
-			print_message(argv[i]);
-		}
 	}
-	else {
-		print_message("Message par defaut\n");
-	}
-	/*err = sscanf(argv[1],"%d",&a);
-	if (err != 1){
+	else if (argc == 4){
+	erra = sscanf(argv[1],"%d",&a);
+	if (erra != 1){
 		printf("Erreur de saisie");
+		return 1;
 	}
-	err = sscanf(argv[2],"%d",&b);
-	if (err != 1){
+	errb = sscanf(argv[2],"%d",&b);
+	if (errb != 1){
 		printf("Erreur de saisie");
+		return 1;
 	}
-	err = sscanf(argv[3],"%c",&op);
-	if (err != 1){
+	errop = sscanf(argv[3],"%c",&op);
+	if (errop != 1){
 		printf("Erreur de saisie");
+		return 1;
 	}
-	calcule(a,b,op);*/
+	}
+	printf("%d\n",calcule(a,b,op));
     return 0;
 }
